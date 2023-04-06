@@ -15,7 +15,7 @@ public class App
 
         Student student = (Student) context.getBean("student");
 
-        System.out.println(student.getName());
+        System.out.println(student.getId() + " " + student.getName() + " " + student.getPhones() + " " + student.getAddress());
 
     }
 }
