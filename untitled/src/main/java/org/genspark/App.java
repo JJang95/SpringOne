@@ -14,5 +14,7 @@ public class App
         ApplicationContext context = new ClassPathXmlApplicationContext("Spring.xml");
 
         Student student = (Student) context.getBean("studentBean");
+
+        
     }
 }
