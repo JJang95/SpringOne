@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+    <bean id="studentBean" class="com.genspark.Student">
+        <constructor-arg name="id" value="1" />
+        <constructor-arg name="name" value="Jonathan Jang" />
+        <constructor-arg name="phones">
+            <list>
+                <ref bean="phone1" />
+                <ref bean="phone2" />
+            </list>
+        </constructor-arg>
+        <constructor-arg name="address" ref="addressBean" />
+    </bean>
+
+    <bean id="phone1" class="com.example.Phone">
+        <constructor-arg name="number" value="1234567890" />
+    </bean>
+
+    <bean id="phone2" class="com.example.Phone">
+        <constructor-arg name="number" value="1234567891" />
+    </bean>
+
+    <bean id="addressBean" class="com.genspark.Address">
+        <constructor-arg name="city" value="Newark" />
+        <constructor-arg name="state" value="NJ" />
+        <constructor-arg name="country" value="USA" />
+        <constructor-arg name="zipCode" value="07101" />
+    </bean>
+
+</beans>
